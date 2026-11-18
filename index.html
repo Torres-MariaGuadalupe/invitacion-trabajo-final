@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b2a2c">
+  <title>Compiló. Se recibió. — María Guadalupe Torres · Invitación a mi presentación del trabajo final</title>
+
+  <!-- Vista previa al compartir. TODO: reemplazá TU-USUARIO y TU-REPO cuando tengas tu link de GitHub Pages -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Compiló. Se recibió. — María Guadalupe Torres">
+  <meta property="og:description" content="Presentación del trabajo final · Viernes 11 de diciembre de 2026 · UTN FRVM, Villa María">
+  <meta property="og:image" content="https://https://github.com/Torres-MariaGuadalupe/invitacion-trabajo-final.git/assets/fotos/foto2.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--ink:#2b2a2c; --graphite:#4b4a4d; --pink:#f7d0e1; --rose:#e79cbc; --paper:#f6f2f0; --line:#f0b8d1}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; padding:22px 0 50px; font:300 15px/1.7 'Montserrat',sans-serif; color:var(--ink);
+      background:#4a2a30 repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 9px);
+    }
+    :focus-visible{outline:3px solid var(--rose); outline-offset:3px}
+    .script{font-family:'Pinyon Script',cursive; font-weight:400; letter-spacing:0}
+    h1,h2{margin:0; font-weight:300; line-height:1.1; text-transform:uppercase; letter-spacing:.02em}
+    h2{font-size:clamp(24px,5.5vw,32px)}
+    h2 .script{text-transform:none; font-size:1.5em; color:var(--rose); line-height:.9}
+    .mark{background:linear-gradient(transparent 6%,var(--pink) 6% 94%,transparent 94%); padding:0 .25em; box-decoration-break:clone; -webkit-box-decoration-break:clone}
+    b{font-weight:600}
+
+    .sheet{width:min(680px,94%); margin:0 auto; overflow:hidden; border-radius:18px; box-shadow:0 24px 60px rgba(0,0,0,.45)}
+    section{padding:60px 9%; position:relative}
+    .light{background:var(--paper)}
+    .dark{background:var(--ink) repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px); color:#fff}
+    .grey{background:var(--graphite); color:#fff}
+    .torn{background:var(--pink); padding:90px 9%;
+      clip-path:polygon(0 2.5%,5% 0,12% 2%,21% .5%,31% 2.5%,42% 0,53% 2%,64% .5%,75% 2.5%,86% 0,94% 2%,100% .5%,100% 97.5%,94% 100%,85% 98%,74% 99.5%,63% 97.5%,52% 100%,41% 98%,30% 99.5%,19% 97.5%,9% 100%,0 98%)}
+    .tag{font-size:12px; font-weight:500; letter-spacing:.12em; text-transform:uppercase}
+    .center{text-align:center}
+
+    /* Botón pill */
+    .pill{display:block; width:100%; text-align:center; background:var(--pink); color:var(--ink); text-decoration:none;
+      padding:15px 20px; border-radius:40px; border:0; font:500 13px 'Montserrat',sans-serif; letter-spacing:.1em; text-transform:uppercase;
+      cursor:pointer; transition:background .2s, transform .2s}
+    .pill:hover{background:#fff; transform:translateY(-2px)}
+    .pill+.pill{margin-top:10px}
+
+    /* HERO */
+    .hero{padding-top:48px}
+    .hero .tag{display:flex; justify-content:space-between; color:#8a7e84}
+    h1{font-size:clamp(46px,14vw,86px); margin-top:30px; color:var(--ink)}
+    h1 .script{display:block; font-size:1.25em; color:var(--rose); text-transform:none; margin:-.12em 0 0 .35em; line-height:1}
+    .hero p.lead{font-size:clamp(15px,3.6vw,18px); max-width:420px; margin:22px 0 34px}
+
+    .clip{position:relative; width:min(270px,80%); margin:0 auto 36px; background:#fff; border-radius:8px; padding:46px 20px 26px; text-align:center;
+      box-shadow:0 14px 30px rgba(60,40,50,.18); transform:rotate(-3deg); border:1px solid #e8e1de}
+    .clip:before{content:''; position:absolute; top:-12px; left:50%; width:90px; height:34px; margin-left:-45px; background:linear-gradient(#cfcbcd,#9d999c); border-radius:6px 6px 4px 4px}
+    .avatar{width:112px; height:112px; border-radius:50%; margin:0 auto 12px; overflow:hidden; display:grid; background:linear-gradient(145deg,#f7d0e1,#e3e6ee); border:3px solid var(--rose)}
+    .avatar img{width:100%; height:100%; object-fit:cover; object-position:center top; grid-area:1/1}
+    .clip .script{font-size:34px; color:var(--rose); line-height:1}
+    .clip .name{display:block; font-weight:600; font-size:12px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; margin-bottom:6px}
+    .clip small{display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase}
+
+    /* Estrella + círculo */
+    .labels{display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
+    .labels div:nth-child(even){text-align:right}
+    .labels b{color:var(--pink)}
+    .orbit{width:min(310px,82%); aspect-ratio:1; margin:22px auto; border:1.5px solid var(--line); border-radius:50%; display:grid; place-items:center}
+    .star{width:78%; aspect-ratio:1; background:var(--pink); color:var(--ink); display:grid; place-items:center; text-align:center; padding-top:0;
+      font-size:12px; line-height:1.5; font-weight:500; letter-spacing:.12em; text-transform:uppercase;
+      clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+    .photos{display:grid; grid-template-columns:1fr 1.25fr 1fr; gap:10px; align-items:center; margin:32px 0 30px}
+    .ph{border-radius:20px; overflow:hidden; aspect-ratio:3/4; display:grid; place-items:center; font-size:11px; color:#c9aebb; text-align:center;
+      background:linear-gradient(160deg,#5b4a52,#3a3639)}
+    .ph:nth-child(2){aspect-ratio:3/4.6}
+    .ph img{width:100%; height:100%; object-fit:cover; grid-area:1/1}
+
+    /* Mensaje */
+    .quote{font-size:92px; line-height:.6; color:var(--ink); font-family:Georgia,serif; margin-bottom:8px}
+    .torn p{font-size:clamp(16px,4vw,19px); line-height:1.8; margin:0 0 20px}
+    .torn .script{font-size:30px; color:var(--graphite); margin:0}
+
+    /* Detalles con círculo y cuenta regresiva */
+    .count{width:min(270px,80%); aspect-ratio:1; margin:28px auto; border:1.5px solid var(--line); border-radius:50%; display:grid; place-items:center; text-align:center; position:relative}
+    .count:before,.count:after{content:''; position:absolute; width:16px; height:16px; border-radius:50%; background:var(--pink)}
+    .count:before{top:14%; right:14%} .count:after{bottom:14%; left:14%}
+    .count strong{display:block; font-size:78px; font-weight:300; line-height:1; color:var(--pink)}
+    .count span{font-size:12px; letter-spacing:.14em; text-transform:uppercase}
+    .rest{text-align:center; font-size:13px; letter-spacing:.1em; margin:0; color:#e8dde2}
+    .facts{margin-top:26px; display:grid; grid-template-columns:1fr 1fr; gap:22px 20px}
+    .facts small{display:block; font-size:12px; color:var(--pink); font-weight:500; letter-spacing:.1em}
+    .facts h3{margin:2px 0 2px; font-size:15px; font-weight:600; text-transform:uppercase; line-height:1.3}
+    .facts p{margin:0; font-size:13px; color:#d9ced3}
+
+    /* Tarjeta blanca con FAQ */
+    .card{background:#fff; border-radius:28px; padding:30px 22px 22px; box-shadow:0 0 0 6px rgba(255,255,255,.12); color:var(--ink)}
+    .card h2{text-align:center; margin-bottom:6px}
+    .card .sub{text-align:center; font-size:14px; margin:0 0 20px; color:#6b646a}
+    details{border-top:1px solid #eadfe4}
+    summary{cursor:pointer; padding:14px 4px; font-weight:500; font-size:14px; list-style:none; display:flex; justify-content:space-between; gap:12px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:'+'; color:var(--rose); font-size:22px; line-height:1}
+    details[open] summary::after{content:'–'}
+    details p{margin:0; padding:0 4px 14px; font-size:14px; color:#6b646a}
+    .card .pill{margin-top:16px}
+
+    /* Cómo llegar */
+    .rows{list-style:none; margin:26px 0 0; padding:0}
+    .rows li{display:flex; gap:14px; padding:16px 0; border-top:1px solid rgba(43,42,44,.3); font-size:15px}
+    .rows li:before{content:'★'; color:var(--ink)}
+    .rows a{color:var(--ink); font-weight:600}
+    footer{background:var(--ink); color:#e8dde2; text-align:center; padding:36px 9% 40px; font-size:12px; letter-spacing:.14em; text-transform:uppercase}
+    footer .script{display:block; font-size:34px; color:var(--pink); text-transform:none; letter-spacing:0; margin-bottom:6px}
+
+    @media(max-width:480px){section{padding:50px 7%} .facts{grid-template-columns:1fr} .photos{gap:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HERO -->
+  <section class="light hero">
+    <div class="tag"><span>Invitación</span><span>Técnica Sup. en Programación</span></div>
+    <h1>Compiló.<span class="script">Se recibió</span></h1>
+    <p class="lead">Te invito a la <span class="mark">presentación de mi trabajo final</span> el viernes 11 de diciembre. Después de tantos desafíos, llegó el momento de compartir el resultado de este camino.</p>
+
+    <div class="clip">
+      <div class="avatar"><img src="assets/fotos/yo.webp" alt="Guada" onerror="this.remove()"></div>
+      <strong class="name">María Guadalupe Torres</strong>
+      <span class="script">Guardá la fecha</span>
+      <small>11 · 12 · 2026</small>
+    </div>
+    <a class="pill" href="#detalles">Ver los detalles</a>
+  </section>
+
+  <!-- EL CAMINO -->
+  <section class="dark">
+    <h2 class="center">Mucho más que <span class="script">un proyecto</span></h2>
+    <div class="orbit"><div class="star">Gracias a<br>este camino</div></div>
+    <div class="labels">
+      <div><b>[1]</b> Desafío</div><div><b>[demasiados]</b> Aprendizajes</div>
+      <div><b>[muchos]</b> Errores</div><div><b>[∞]</b> Nuevos comienzos</div>
+    </div>
+    <div class="photos">
+      <!-- Tus fotos van en assets/fotos/ -->
+      <div class="ph">foto 1<img src="assets/fotos/foto1.jpg" alt="Recuerdo de la carrera" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph">foto 2<img src="assets/fotos/foto2.jpg" alt="Recuerdo con compañeros" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph">foto 3<img src="assets/fotos/foto3.jpg" alt="Recuerdo del proyecto" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </section>
+
+  <!-- MENSAJE (papel rasgado) -->
+  <section class="torn">
+    <div class="quote">“</div>
+    <p>Hay metas que parecen lejanas hasta que, un día, estás ahí. Este camino tuvo dudas y muchísimo esfuerzo. Hoy quiero compartir con ustedes <span class="mark">la presentación de mi trabajo final</span> y me encantaría que me acompañen.</p>
+    <p class="script">un camino, muchos recuerdos</p>
+  </section>
+
+  <!-- DETALLES -->
+  <section class="grey" id="detalles">
+    <h2>El gran <span class="script">día</span></h2>
+    <div class="facts">
+      <div><small>[01] Fecha</small><h3>Viernes 11 de diciembre</h3><p>2026</p></div>
+      <div><small>[02] Horario</small><h3>A confirmar</h3><p>Lo comparto apenas lo sepa.</p></div>
+      <div><small>[03] Lugar</small><h3>UTN – FRVM</h3><p>Auditorio · Villa María, Córdoba</p></div>
+      <div><small>[04] Evento</small><h3>Presentación del trabajo final</h3><p>Técnica Superior en Programación</p></div>
+    </div>
+    <div class="count"><div><strong id="days">--</strong><span>días para el gran día</span></div></div>
+    <p class="rest"><span id="hours">--</span> h · <span id="minutes">--</span> min · <span id="seconds">--</span> s</p>
+  </section>
+
+  <!-- PREGUNTAS (editá las respuestas a tu gusto) -->
+  <section class="dark">
+    <div class="card">
+      <h2>¿Alguna <span class="script">duda?</span></h2>
+      <p class="sub">Por si te queda alguna pregunta.</p>
+      <details><summary>¿A qué hora es?</summary><p>Todavía lo estoy confirmando. Actualizo esta página apenas lo sepa.</p></details>
+      <details><summary>¿Puedo ir acompañado/a?</summary><p>¡Claro! Cuantos más seamos, mejor.</p></details>
+      <details><summary>¿Hay que llevar algo?</summary><p>Solo las ganas de acompañarme.</p></details>
+    </div>
+  </section>
+
+  <!-- CÓMO LLEGAR + MÚSICA -->
+  <section class="torn" style="padding-bottom:80px">
+    <h2>Cómo <span class="script">llegar</span></h2>
+    <ul class="rows">
+      <li><span><b>UTN – Facultad Regional Villa María</b><br>Auditorio · Villa María, Córdoba</span></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=UTN+Facultad+Regional+Villa+Maria+Cordoba" target="_blank" rel="noopener">Abrir ubicación en Maps ↗</a></li>
+    </ul>
+    <p class="script" style="font-size:32px;margin:30px 0 10px;line-height:1">La banda sonora</p>
+    <iframe title="Canción en Spotify" src="https://open.spotify.com/embed/track/6DTPS5gi2FZhESu4qFTnPs?utm_source=generator" width="100%" height="152" style="border:0;border-radius:12px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <footer><span class="script">Gracias por acompañarme</span>María Guadalupe Torres<br>Un logro enorme · 2026</footer>
+</div>
+
+<script>
+  // Cuenta regresiva hasta el comienzo del 11/12/2026 (hora Argentina)
+  const target = new Date('2026-12-11T00:00:00-03:00').getTime();
+  function tick(){
+    const diff = target - Date.now();
+    if(diff <= 0){ document.querySelector('.count').innerHTML = '<span class="script" style="font-size:44px;color:var(--pink);text-transform:none">¡Llegó el día!</span>'; document.querySelector('.rest').remove(); return; }
+    const v = {days:Math.floor(diff/864e5), hours:Math.floor(diff%864e5/36e5), minutes:Math.floor(diff%36e5/6e4), seconds:Math.floor(diff%6e4/1e3)};
+    for(const k in v) document.getElementById(k).textContent = String(v[k]).padStart(2,'0');
+  }
+  tick(); const timer = setInterval(tick, 1000);
+
+</script>
+</body>
+</html>
