@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Compiló. Se recibió. — María Guadalupe Torres">
   <meta property="og:description" content="Presentación del trabajo final · Viernes 11 de diciembre de 2026 · UTN FRVM, Villa María">
-  <meta property="og:image" content="https://https://github.com/Torres-MariaGuadalupe/invitacion-trabajo-final.git/assets/fotos/foto2.jpg">
+  <meta property="og:image" content="https://torres-mariaguadalupe.github.io/assets/fotos/foto2.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,15 +51,18 @@
 
     /* HERO */
     .hero{padding-top:48px}
-    .hero .tag{display:flex; justify-content:space-between; color:#8a7e84}
+    .hero .tag{display:flex; justify-content:space-between; align-items:flex-start; gap:18px; color:#8a7e84}
+    .hero .tag span:last-child{text-align:right}
     h1{font-size:clamp(46px,14vw,86px); margin-top:30px; color:var(--ink)}
     h1 .script{display:block; font-size:1.25em; color:var(--rose); text-transform:none; margin:-.12em 0 0 .35em; line-height:1}
     .hero p.lead{font-size:clamp(15px,3.6vw,18px); max-width:420px; margin:22px 0 34px}
 
-    .clip{position:relative; width:min(270px,80%); margin:0 auto 36px; background:#fff; border-radius:8px; padding:46px 20px 26px; text-align:center;
+    .clip{position:relative; width:min(270px,80%); margin:0 auto 36px; background:#fff; border-radius:8px; padding:88px 20px 26px; text-align:center;
       box-shadow:0 14px 30px rgba(60,40,50,.18); transform:rotate(-3deg); border:1px solid #e8e1de}
     .clip:before{content:''; position:absolute; top:-12px; left:50%; width:90px; height:34px; margin-left:-45px; background:linear-gradient(#cfcbcd,#9d999c); border-radius:6px 6px 4px 4px}
-    .avatar{width:112px; height:112px; border-radius:50%; margin:0 auto 12px; overflow:hidden; display:grid; background:linear-gradient(145deg,#f7d0e1,#e3e6ee); border:3px solid var(--rose)}
+    .avatar-wrap{position:relative; width:112px; margin:0 auto 12px}
+    .cap{position:absolute; top:-46px; left:50%; width:156px; height:auto; transform:translateX(-50%) rotate(-4deg); filter:drop-shadow(0 3px 3px rgba(0,0,0,.25)); pointer-events:none}
+    .avatar{width:112px; height:112px; border-radius:50%; margin:0; overflow:hidden; display:grid; background:linear-gradient(145deg,#f7d0e1,#e3e6ee); border:3px solid var(--rose)}
     .avatar img{width:100%; height:100%; object-fit:cover; object-position:center top; grid-area:1/1}
     .clip .script{font-size:34px; color:var(--rose); line-height:1}
     .clip .name{display:block; font-weight:600; font-size:12px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; margin-bottom:6px}
@@ -70,14 +73,14 @@
     .labels div:nth-child(even){text-align:right}
     .labels b{color:var(--pink)}
     .orbit{width:min(310px,82%); aspect-ratio:1; margin:22px auto; border:1.5px solid var(--line); border-radius:50%; display:grid; place-items:center}
-    .star{width:78%; aspect-ratio:1; background:var(--pink); color:var(--ink); display:grid; place-items:center; text-align:center; padding-top:0;
-      font-size:12px; line-height:1.5; font-weight:500; letter-spacing:.12em; text-transform:uppercase;
-      clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+    .starwrap{position:relative; width:78%; aspect-ratio:1}
+    .star{width:100%; height:100%; background:var(--pink); clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+    .star-text{position:absolute; left:0; right:0; top:38%; text-align:center; color:var(--ink); font-size:10px; font-weight:500; line-height:1.5; letter-spacing:.05em; text-transform:uppercase}
     .photos{display:grid; grid-template-columns:1fr 1.25fr 1fr; gap:10px; align-items:center; margin:32px 0 30px}
-    .ph{border-radius:20px; overflow:hidden; aspect-ratio:3/4; display:grid; place-items:center; font-size:11px; color:#c9aebb; text-align:center;
+    .ph{border-radius:20px; overflow:hidden; aspect-ratio:3/4; position:relative;
       background:linear-gradient(160deg,#5b4a52,#3a3639)}
     .ph:nth-child(2){aspect-ratio:3/4.6}
-    .ph img{width:100%; height:100%; object-fit:cover; grid-area:1/1}
+    .ph img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
 
     /* Mensaje */
     .quote{font-size:92px; line-height:.6; color:var(--ink); font-family:Georgia,serif; margin-bottom:8px}
@@ -130,7 +133,23 @@
     <p class="lead">Te invito a la <span class="mark">presentación de mi trabajo final</span> el viernes 11 de diciembre. Después de tantos desafíos, llegó el momento de compartir el resultado de este camino.</p>
 
     <div class="clip">
-      <div class="avatar"><img src="assets/fotos/yo.webp" alt="Guada" onerror="this.remove()"></div>
+      <div class="avatar-wrap">
+        <div class="avatar"><img src="assets/fotos/yo.webp" alt="Guada" onerror="this.remove()"></div>
+        <!-- Birrete -->
+        <svg class="cap" viewBox="0 0 160 92" aria-hidden="true">
+          <path d="M42 46v20q38 18 76 0V46z" fill="#1d1d1f"/>
+          <path d="M42 66q38 18 76 0" fill="none" stroke="#f0a6c4" stroke-width="4"/>
+          <path d="M8 38l72 26 72-26v5L80 69 8 43z" fill="#0f0f10"/>
+          <path d="M80 10l72 28-72 26L8 38z" fill="#2c2c30"/>
+          <path d="M80 10l72 28-72 26" fill="none" stroke="#3d3d42" stroke-width="1.5"/>
+          <path d="M80 37l50 7 6 2" fill="none" stroke="#f0a6c4" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M136 46v24" stroke="#f0a6c4" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M131 69h10l2 17h-14z" fill="#ec8fb4"/>
+          <path d="M133 72v12M136 72v13M139 72v12" stroke="#f7c3d8" stroke-width="1"/>
+          <circle cx="80" cy="37" r="4.5" fill="#0f0f10"/>
+          <circle cx="136" cy="68" r="3.2" fill="#f0a6c4"/>
+        </svg>
+      </div>
       <strong class="name">María Guadalupe Torres</strong>
       <span class="script">Guardá la fecha</span>
       <small>11 · 12 · 2026</small>
@@ -141,16 +160,16 @@
   <!-- EL CAMINO -->
   <section class="dark">
     <h2 class="center">Mucho más que <span class="script">un proyecto</span></h2>
-    <div class="orbit"><div class="star">Gracias a<br>este camino</div></div>
+    <div class="orbit"><div class="starwrap"><div class="star"></div><div class="star-text">Gracias a<br>este camino</div></div></div>
     <div class="labels">
       <div><b>[1]</b> Desafío</div><div><b>[demasiados]</b> Aprendizajes</div>
       <div><b>[muchos]</b> Errores</div><div><b>[∞]</b> Nuevos comienzos</div>
     </div>
     <div class="photos">
       <!-- Tus fotos van en assets/fotos/ -->
-      <div class="ph">foto 1<img src="assets/fotos/foto1.jpg" alt="Recuerdo de la carrera" loading="lazy" onerror="this.remove()"></div>
-      <div class="ph">foto 2<img src="assets/fotos/foto2.jpg" alt="Recuerdo con compañeros" loading="lazy" onerror="this.remove()"></div>
-      <div class="ph">foto 3<img src="assets/fotos/foto3.jpg" alt="Recuerdo del proyecto" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="assets/fotos/foto1.jpg" alt="Recuerdo de la carrera" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="assets/fotos/foto2.jpg" alt="Recuerdo con compañeros" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="assets/fotos/foto3.jpg" alt="Recuerdo del proyecto" loading="lazy" onerror="this.remove()"></div>
     </div>
   </section>
 
